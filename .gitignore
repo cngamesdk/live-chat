@@ -1,0 +1,13 @@
+#Mac Os
+.DS_Store
+
+#IDE
+/.idea
+h5/.idea
+api/.idea
+
+#logs
+api/logs/*
+
+#node
+h5/node_modules

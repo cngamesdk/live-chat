@@ -1,0 +1,44 @@
+server:
+  port: 8890
+  mode: debug
+
+mysql:
+  path: your_path
+  port: 3306
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db-name: your_db_name
+  username: your_user_name
+  password: your_password
+  max-idle-conns: 10
+  max-open-conns: 100
+
+redis:
+  db: 0
+  addr: your_addr
+  password: your_password
+  prefix: "live_chat:"
+
+chat:
+  faq_match_threshold: 0.6
+  max_upload_size: 10485760
+  allowed_upload_types:
+    - image/jpeg
+    - image/png
+    - image/gif
+    - image/webp
+    - video/mp4
+  session_timeout: 1800
+  agent_assignment: round_robin
+
+upload:
+  path: ./uploads
+  max_size: 10485760
+
+log:
+  level: info                  # debug / info / warn / error
+  file_path: logs/app.log      # 日志文件路径
+  max_size: 100                # 单文件最大 100MB 后滚动
+  max_backups: 7               # 保留最近 7 个备份（实现按天 + 最多 7 天）
+  max_age: 7                   # 最多保留 7 天
+  compress: true               # 压缩旧日志
+  console: true                # 同时输出到控制台
